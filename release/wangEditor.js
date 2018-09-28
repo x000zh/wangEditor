@@ -507,6 +507,10 @@ var config = {
     // 默认菜单配置
     menus: ['head', 'bold', 'italic', 'underline', 'strikeThrough', 'foreColor', 'backColor', 'link', 'list', 'justify', 'quote', 'emoticon', 'image', 'table', 'video', 'code', 'undo', 'redo'],
 
+    extraMenus: {
+        //menuName : Object
+    },
+
     // // 语言配置
     // lang: {
     //     '设置标题': 'title',
@@ -579,7 +583,7 @@ var config = {
     // 自定义上传图片超时时间 ms
     uploadImgTimeout: 10000,
 
-    // 上传图片 hook 
+    // 上传图片 hook
     uploadImgHooks: {
         // customInsert: function (insertLinkImg, result, editor) {
         //     console.log('customInsert')
@@ -2696,7 +2700,16 @@ Menus.prototype = {
 
         // 根据配置信息，创建菜单
         configMenus.forEach(function (menuKey) {
-            var MenuConstructor = MenuConstructors[menuKey];
+            var MenuConstructor = null;
+            if (menuKey in MenuConstructors) {
+                MenuConstructor = MenuConstructors[menuKey];
+            } else if (menuKey in config.extraMenus) {
+                //可以加载额外的按钮
+                MenuConstructor = config.extraMenus[menuKey];
+            } else {
+                return;
+            }
+
             if (MenuConstructor && typeof MenuConstructor === 'function') {
                 // 创建单个菜单
                 _this.menus[menuKey] = new MenuConstructor(editor);
@@ -4291,6 +4304,12 @@ var style = document.createElement('style');
 style.type = 'text/css';
 style.innerHTML = inlinecss;
 document.getElementsByTagName('HEAD').item(0).appendChild(style);
+
+//输出panel方便扩展
+Editor.Panel = Panel;
+// dom core
+Editor.$ = $;
+Editor.getRandom = getRandom;
 
 // 返回
 var index = window.wangEditor || Editor;

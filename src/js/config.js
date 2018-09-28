@@ -26,6 +26,10 @@ const config = {
         'redo'
     ],
 
+    extraMenus: {
+        //menuName : Object
+    },
+
     // // 语言配置
     // lang: {
     //     '设置标题': 'title',
@@ -98,7 +102,7 @@ const config = {
     // 自定义上传图片超时时间 ms
     uploadImgTimeout: 10000,
 
-    // 上传图片 hook 
+    // 上传图片 hook
     uploadImgHooks: {
         // customInsert: function (insertLinkImg, result, editor) {
         //     console.log('customInsert')
@@ -138,7 +142,7 @@ const config = {
     // customAlert: function (info) {
     //     // 自定义上传提示
     // },
-    
+
     // // 自定义上传图片
     // customUploadImg: function (files, insert) {
     //     // files 是 input 中选中的文件列表

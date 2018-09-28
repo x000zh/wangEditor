@@ -22,7 +22,16 @@ Menus.prototype = {
 
         // 根据配置信息，创建菜单
         configMenus.forEach(menuKey => {
-            const MenuConstructor = MenuConstructors[menuKey]
+            let MenuConstructor = null
+            if( menuKey in MenuConstructors){
+                MenuConstructor = MenuConstructors[menuKey]
+            }else if(menuKey in config.extraMenus){
+                //可以加载额外的按钮
+                MenuConstructor = config.extraMenus[menuKey]
+            }else{
+                return
+            }
+
             if (MenuConstructor && typeof MenuConstructor === 'function') {
                 // 创建单个菜单
                 this.menus[menuKey] = new MenuConstructor(editor)

@@ -140,11 +140,11 @@ Editor.prototype = {
         if(config.onfocus || config.onblur){
             // 当前编辑器是否是焦点状态
             this.isFocus = false
-            
+
             $(document).on('click', (e) => {
                 //判断当前点击元素是否在编辑器内
                 const isChild = $toolbarSelector.isContain($(e.target))
-                
+
                 if (!isChild) {
                     if(this.isFocus){
                         this.onblur && this.onblur()
@@ -262,7 +262,7 @@ Editor.prototype = {
                     onchange(currentHtml)
                     beforeChangeHtml = currentHtml
                 }, onchangeTimeout)
-            }   
+            }
         }
 
         // -------- 绑定 onblur 事件 --------
@@ -281,7 +281,7 @@ Editor.prototype = {
                 onfocus()
             }
         }
-        
+
     },
 
     // 创建编辑器
