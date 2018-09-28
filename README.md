@@ -1,6 +1,8 @@
 
 # wangEditor
 
+## 这个是folk的版本， 主要针对我自己项目的需求做一件修改，以及比较影响体验的修复[MORE](README_FOLK.md)
+
 ## 介绍
 
 **wangEditor** —— 轻量级 web 富文本编辑器，配置方便，使用简单。支持 IE10+ 浏览器。
@@ -61,7 +63,7 @@ editor.create()
 
 ## 关于作者
 
-- 关注作者的博客 - 《[深入理解javascript原型和闭包系列](http://www.cnblogs.com/wangfupeng1988/p/4001284.html)》《[深入理解javascript异步系列](https://github.com/wangfupeng1988/js-async-tutorial)》《[CSS知多少](http://www.cnblogs.com/wangfupeng1988/p/4325007.html)》 
+- 关注作者的博客 - 《[深入理解javascript原型和闭包系列](http://www.cnblogs.com/wangfupeng1988/p/4001284.html)》《[深入理解javascript异步系列](https://github.com/wangfupeng1988/js-async-tutorial)》《[CSS知多少](http://www.cnblogs.com/wangfupeng1988/p/4325007.html)》
 - 学习作者的教程 - 《[前端JS基础面试题](http://coding.imooc.com/class/115.html)》《[React.js模拟大众点评webapp](http://coding.imooc.com/class/99.html)》《[zepto设计与源码分析](http://www.imooc.com/learn/745)》《[用grunt搭建自动化的web前端开发环境](http://study.163.com/course/courseMain.htm?courseId=1103003)》《[json2.js源码解读](http://study.163.com/course/courseMain.htm?courseId=691008)》
 
 如果你感觉有收获，欢迎给我打赏 ———— 以激励我更多输出优质开源内容
